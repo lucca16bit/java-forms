@@ -24,16 +24,25 @@ public class EmailService {
             SimpleMailMessage mailMessage = new SimpleMailMessage();
             mailMessage.setFrom(sender);
             mailMessage.setTo(contactEmail);
-            mailMessage.setSubject("Novo contato do portifólio: " + data.name());
+            mailMessage.setSubject(data.name() + "quer entrar em contato com você!");
 
             String body = String.format(
                 """
-                Você recebeu um novo contato através do seu portifólio
-                
+                Olá Lucas!
+            
+                Você recebeu um novo contato através do seu portfólio.
+            
+                Detalhes do contato:
                 Nome: %s
                 Email: %s
-                Mensagem:\s
+            
+                Mensagem:
                 %s
+                
+                Por favor, responda diretamente para o email do contato se desejar continuar a conversa.
+
+                Atenciosamente,
+                Lucas - Equipe Back-End
                 """, data.name(), data.email(), data.description());
 
             mailMessage.setText(body);
