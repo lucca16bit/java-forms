@@ -24,7 +24,7 @@ public class EmailService {
             SimpleMailMessage mailMessage = new SimpleMailMessage();
             mailMessage.setFrom(sender);
             mailMessage.setTo(contactEmail);
-            mailMessage.setSubject(data.name() + "quer entrar em contato com você!");
+            mailMessage.setSubject(data.name() + " quer entrar em contato com você!");
 
             String body = String.format(
                 """
